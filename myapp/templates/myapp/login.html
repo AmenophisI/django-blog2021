@@ -1,0 +1,28 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <br>
+        <h2>ログイン</h2>
+        <br>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {% for field in form %}
+                {{ field.label }}
+                {{ field }}
+                {{ field.errors }}
+                <br>
+            {% endfor %}
+
+            <br><br>
+
+            <button type="submit" class="btn btn-dark btn-rounded">ログイン</button>
+            <br><br>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
